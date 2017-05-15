@@ -148,8 +148,8 @@ Create an html `form` with two inputs: one for a username (named "username"), th
 
 ```html
 <form>
-	<input type="text" name="username" placeholder=" username..." required>
-	<input type="password" password="password" placeholder="password..." required>
+	<input type="text" name="username" placeholder="cooluser1234" required>
+	<input type="password" password="password" placeholder="password" required>
 	<input type="submit">
 </form>
 ```
@@ -271,7 +271,7 @@ We encourage you to always use the optional `<label>` tag with each of your form
 **Placeholder**
 
 ```html
-<input type="text" name="username" placeholder="Enter a unique username...">
+<input type="text" name="username" placeholder="cooluser1234">
 ```
 
 > Make sure the label's `for` attribute matches the input's `id` attribute!
