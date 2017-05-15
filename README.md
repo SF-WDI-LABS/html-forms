@@ -72,9 +72,9 @@ By default, when a form is submitted, it generates an HTTP request. In the openi
 
 >For now simply understand that it is convention for [GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3) to be used in a request when the person using your site (the client) wants to receive data, and for [POST](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5) to be used in a request when the client wants to send data.
 
-###Challenge: Doomed?
+### Challenge: Doomed?
 
-Create an html `form` that, on submit, sends the user to "hasthelargehadroncolliderdestroyedtheworldyet.com". This form will only have one input: the submit button. Hint: what's the form action? Bonus: Can you change the submit button to say "Are we doomed?".
+Create an HTML `form` that, on submit, sends the user to "hasthelargehadroncolliderdestroyedtheworldyet.com". This form will only have one input: the submit button. Hint: what's the form action? Bonus: Can you change the submit button to say "Are we doomed?".
 
 <details>
 <summary>Example solution</summary>
@@ -133,7 +133,7 @@ Radio buttons or checkboxes:
 - **`value`**: the data or value that is returned for a specific group (a multi-element control), if this element is checked.
 
 
-You may be thinking to yourself, "an HTTP request has optional data that it should be able to send too. Where does that come from in the form?"
+You may be thinking to yourself, "An HTTP request has optional data that it should be able to send too. Where does that come from in the form?"
 
 Great question!
 
@@ -199,28 +199,31 @@ instrument: "bongos"
 ```
 
 <details>
-<summary>**What endpoint/action are we submitting to?**</summary>
-<br>
+<summary>What endpoint/action are we submitting to?</summary>
+
 We are making a "GET" request to "https://musicbrainz.org/search".
+
 </details>
 
 <details>
-<summary>**What data will be submitted to the server?**</summary>
-<br>
+<summary>What data will be submitted to the server?</summary>
+
 query: "Adele", type: "artist"
+
 </details>
 
 <details>
-<summary>**What will that data look like? How will it be formatted?**</summary>
-<br>
+<summary>What will that data look like? How will it be formatted?</summary>
+
 It will be in the form of a query parameter: `?query=adele&type=artist`
+
 </details>
 
 ## Form Submission
 
 Sometimes we want to submit a form, in the background, without ever refreshing the page. This is a common pattern in modern "single page applications". How do you submit form data *in the background*?
 
-When a form is submitted it triggers the `submit` event. We can set an event listener on the form using an element's method [`.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener). Additionally, in order to **stop** the form from submitting, we have to prevent its *default* behavior. Calling `preventDefault` will allow us to later us AJAX to submit the form data without refreshing the page!
+When a form is submitted, it triggers the `submit` event. We can set an event listener on the form using an element's method [`.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), or using jQuery's [`.on`](http://api.jquery.com/on/). Additionally, in order to **stop** the form from submitting, we have to prevent its *default* behavior. Calling `preventDefault` will allow us to do something other than send the default HTTP request. (We'll see an example of what we might do when we talk about AJAX.)
 
 ``` javascript
 $("#artist-search-form").addEventListener("submit", function(event) {
@@ -229,9 +232,7 @@ $("#artist-search-form").addEventListener("submit", function(event) {
 })
 ```
 
->Why is `.preventDefault` useful?
-
-Let's grab data from the form by using the keyword `this`, which refers to the element that triggered the event—aka, the form! Then let's drill down into the forms data using `.querySelector` to target children elements inside it.
+We can grab data from the form by using the keyword `this`, which refers to the element that triggered the event. Then we can drill down into the form's data using `.querySelector` to target children elements inside it.
 
 ``` javascript
 // target the form
@@ -260,7 +261,7 @@ We encourage you to always use the optional `<label>` tag with each of your form
 <input id="password" type="text" name="password" />
 ```
 
->"*Do not use the placeholder attribute instead of a <label> element*. Their purposes are different: the <label> attribute describes the role of the form element; that is, it indicates what kind of information is expected, the placeholder attribute is a hint about the format the content should take. There are cases in which the placeholder attribute is never displayed to the user, so the form must be understandable without it." -MDN
+>"**Do not use the placeholder attribute instead of a <label> element**. Their purposes are different: the <label> attribute describes the role of the form element; that is, it indicates what kind of information is expected, the placeholder attribute is a hint about the format the content should take. There are cases in which the placeholder attribute is never displayed to the user, so the form must be understandable without it." -MDN
 
 
 **Placeholder**
@@ -277,11 +278,11 @@ Form validations help to prevent users from submitting bad data to the server. T
 
 * a missing or empty field (required)
 * an email address that was missing an "@" symbol (wrong pattern)
-* a password that is obiously too short (invalid length)
+* a password that is obviously too short (invalid length)
 
 #### `required` attribute
 
-Try submitting the below form without entering your name:
+Try submitting the below form without picking a color:
 
 ```html
 <form>
