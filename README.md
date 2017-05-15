@@ -238,7 +238,7 @@ Let's grab data from the form by using the keyword `this`, which refers to the e
 var artistSearchFrom = document.querySelector("#artist-search-form");
 artistSearchFrom.addEventListener("submit", function(event) {
   // stop the form from submitting!
-  event.preventDefault(); 
+  event.preventDefault();
   // grab the user input
   var artist = this.querySelector("#query").value;
   var type = this.querySelector("#type").value;
@@ -318,40 +318,7 @@ You may need the user to enter a specific amount of characters. Let's say you ne
 
 ## Independent Practice
 
-**1)** Create an html form that contains the html5 [color-picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) input (named "i"). When the user picks a color, let's say one with the hex code `#18967A`, and clicks submit, redirect them to, e.g. "https://www.wolframalpha.com/input/?i=%2318967A".
-
-> **Note:** the `#` character automatically gets converted to `%23` in this context because it is a special character and **not a fragment** in this context.
-
-<details>
-<summary>Example solution</summary>
-
-```html
-<form action="https://www.wolframalpha.com/input/" method="GET">
-  <input type="color" name="i">
-  <input type="submit" value="search">
-</form>
-```
-
-</details>
-
-**2)** Create an html form that searches github for code examples that match a specific query (q) and language (l). Use `html`, `javascript`, and `ruby` as the languages the user can select from a drop down menu. A search for "audio" in the language "javascript" should direct to https://github.com/search?q=audio&l=javascript.
-
-<details>
-<summary>Example solution</summary>
-
-```html
-<form action="https://github.com/search" method="GET">
-  <input type="text" name="q" placeholder="search">
-  <select name="l">
-    <option value="HTML">HTML</option>
-    <option value="Javascript">Javascript</option>
-    <option value="Ruby">Ruby</option>
-  </select>
-  <input type="submit" value="Search Github">
-</form>
-```
-
-</details>
+Practice with HTML forms in [this training](https://github.com/SF-WDI-LABS/html-forms-lab).
 
 ## Closing Thoughts
 
