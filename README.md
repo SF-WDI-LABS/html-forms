@@ -184,9 +184,9 @@ instrument: "bongos"
 </details>
 
 <details>
-<summary>What will that data look like? How will it be formatted</summary>
+<summary>What will that data look like? How will it be formatted?</summary>
 
-`?instrument=bongos`
+It will be in the form of a query parameter: `?instrument=bongos`
 
 </details>
 
@@ -205,7 +205,7 @@ instrument: "bongos"
 <details>
 <summary>What endpoint/action are we submitting to?</summary>
 
-We are making a "GET" request to "https://musicbrainz.org/search".
+We are making a `GET` request to `https://musicbrainz.org/search`.
 
 </details>
 
@@ -219,7 +219,7 @@ query: "Adele", type: "artist"
 <details>
 <summary>What will that data look like? How will it be formatted?</summary>
 
-It will be in the form of a query parameter: `?query=adele&type=artist`
+`?query=adele&type=artist`
 
 </details>
 
