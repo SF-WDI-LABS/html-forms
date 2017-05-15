@@ -265,7 +265,7 @@ We encourage you to always use the optional `<label>` tag with each of your form
 <input id="password" type="text" name="password" />
 ```
 
->"**Do not use the placeholder attribute instead of a <label> element**. Their purposes are different: the <label> attribute describes the role of the form element; that is, it indicates what kind of information is expected, the placeholder attribute is a hint about the format the content should take. There are cases in which the placeholder attribute is never displayed to the user, so the form must be understandable without it." -MDN
+>"**Do not use the placeholder attribute instead of a label element**. Their purposes are different: the <label> attribute describes the role of the form element; that is, it indicates what kind of information is expected, the placeholder attribute is a hint about the format the content should take. There are cases in which the placeholder attribute is never displayed to the user, so the form must be understandable without it." -MDN
 
 
 **Placeholder**
