@@ -30,7 +30,7 @@ Forms are an important way a web application receive user input. The proper use 
 
 ### What is HTTP?
 
-![image](https://cloud.githubusercontent.com/assets/6520345/20934822/5eab66aa-bb91-11e6-937b-ffe856952f1a.png)
+![image](https://cloud.githubusercontent.com/assets/6520345/20934822/5eab66aa-bb91-11e6-937b-ffe856952f1a.png =250x250)
 
 
 HTTP stands for *hypertext transfer protocol*. It is the standard that determines the data format of any information moving between websites. To make an HTTP request, you need three things.
