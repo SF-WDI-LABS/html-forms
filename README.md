@@ -169,21 +169,25 @@ Create an html `form` with two inputs: one for a username (named "username"), th
 ```
 
 <details>
-<summary>**What endpoint/action are we submitting to?**</summary>
-<br>
-We did not supply a form `action`. That means that it will default to the current endpoint. In otherwords, you will refresh the current page.
+<summary>What endpoint/action are we submitting to?</summary>
+
+
+We did not supply a form `action`. That means that it will default to the current endpoint. In other words, you will refresh the current page.
+
 </details>
 
 <details>
-<summary>**What data will be submitted to the server?**</summary>
-<br>
+<summary>What data will be submitted to the server?</summary>
+
 instrument: "bongos"
+
 </details>
 
 <details>
-<summary>**What will that data look like? How will it be formatted**</summary>
-<br>
+<summary>What will that data look like? How will it be formatted</summary>
+
 `?instrument=bongos`
+
 </details>
 
 
