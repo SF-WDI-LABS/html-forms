@@ -237,7 +237,7 @@ $("#artist-search-form").on("submit", function(event) {
 })
 ```
 
-We can grab data from the form by using the keyword `this`, which refers to the element that triggered the event. Then we can drill down into the form's data by selecting children elements inside it.
+Then we can drill down into the form's data by selecting children elements inside it.
 
 ``` javascript
 // target the form
@@ -251,16 +251,15 @@ $("#artist-search-form").on("submit", function(event) {
   console.log(artist, "is a", type);
 });
 ```
-
  
 **Note**: jQuery's `text` method will not work on inputs!
 
-If we want to grab **all** of the data (name/value pairs) in the form, we can use jQuery's [`serialize` method](http://api.jquery.com/serialize/).
+If we want to grab **all** of the data (name/value pairs) in the form, we can use jQuery's [`serialize` method](http://api.jquery.com/serialize/). We will need to refer to the whole form by using the keyword `this`, which refers to the element that triggered the event.
 
 ```javascript
 $( "#artist-search-form" ).on( "submit", function( event ) {
   event.preventDefault();
-  var formData = $( this ).serialize();
+  var formData = $(this).serialize();
   console.log(formData); // will console log "query=adele&type=artist" 
 });
 ```
