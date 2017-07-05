@@ -229,28 +229,42 @@ Sometimes we want to submit a form, in the background, without ever refreshing t
 
 When a form is submitted, it triggers the `submit` event. We can set an event listener on the form using an element's method [`.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), or using jQuery's [`.on`](http://api.jquery.com/on/). Additionally, in order to **stop** the form from submitting, we have to prevent its *default* behavior. Calling `preventDefault` will allow us to do something other than send the default HTTP request. (We'll see an example of what we might do when we talk about AJAX.)
 
+
 ``` javascript
-$("#artist-search-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Stops the form from submitting!
+$("#artist-search-form").on("submit", function(event) {
+    event.preventDefault(); // Stops the form from GETting from musicbrainz.org!
     alert("We've submitted the form!")
 })
 ```
 
-We can grab data from the form by using the keyword `this`, which refers to the element that triggered the event. Then we can drill down into the form's data using `.querySelector` to target children elements inside it.
+We can grab data from the form by using the keyword `this`, which refers to the element that triggered the event. Then we can drill down into the form's data by selecting children elements inside it.
 
 ``` javascript
 // target the form
-var artistSearchFrom = document.querySelector("#artist-search-form");
-artistSearchFrom.addEventListener("submit", function(event) {
+$("#artist-search-form").on("submit", function(event) {
   // stop the form from submitting!
   event.preventDefault();
   // grab the user input
-  var artist = this.querySelector("#query").value;
-  var type = this.querySelector("#type").value;
+  var artist = $("#query").val();
+  var type = $("#type").val();
   // do something with the user input
   console.log(artist, "is a", type);
 });
 ```
+
+ 
+**Note**: jQuery's `text` method will not work on inputs!
+
+If we want to grab **all** of the data (name/value pairs) in the form, we can use jQuery's [`serialize` method](http://api.jquery.com/serialize/).
+
+```javascript
+$( "#artist-search-form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  var formData = $( this ).serialize();
+  console.log(formData); // will console log "query=adele&type=artist" 
+});
+```
+
 
 ## The `<label>` element and `placeholder` attribute
 
