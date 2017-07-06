@@ -16,9 +16,9 @@ Forms are an important way a web application receive user input. The proper use 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- Understand the basics of the client/server model
+- describe the basics of the client/server model
 - Evaluate the proper usage of HTML form and input options
-- Compare and contrast the difference between a `method` and an `action`
+- identify the difference between a `method` and an `action`
 - Create forms that generate query parameters
 
 ## Where should we be now?
